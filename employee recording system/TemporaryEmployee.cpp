@@ -1,26 +1,31 @@
-/*
- * TemporaryEmployee.cpp
- *
- *  Created on: 23 Kas 2021
- *      Author: elif_
- */
 
+#include "Date.h"
 #include "TemporaryEmployee.h"
 
-//TemporaryEmployee::TemporaryEmployee() :Employee(Employee::getNumber(),Employee::getType(),Employee::getName(),Employee::getSurname(),
-//		Employee::getTitle(),Employee::getSalaryCoefficient(),Employee::getDateOfBirth(),Employee::getDateOfAppointment(),
-//		Employee::getLengthOfService()){
-//	TemporaryEmployee::setType(0);
+TemporaryEmployee::TemporaryEmployee(int number,
+		bool type,
+		string name,
+		string surname,
+		string title,
+		float salaryCoefficient,
+		Date dateOfBirth,
+		Date dateOfAppointment,
+		int lengthOfService):number(number),type(0),name(name),surname(surname),dateOfBirth(dateOfBirth),dateOfAppointment(dateOfAppointment) {
+	// TODO Auto-generated constructor stub
+	TemporaryEmployee::salaryCoefficient=salaryCoefficient;
+	TemporaryEmployee::title=title;
+	TemporaryEmployee::lengthOfService=lengthOfService;
+
+}
 
 
-//}
 void TemporaryEmployee::setTitle(string title){
 		TemporaryEmployee::title=title;
 	}
-	void TemporaryEmployee::setSalaryCoefficient(float salary){
-		TemporaryEmployee::salaryCoefficient=salary;
-	}
-	void TemporaryEmployee::setName(string name){
+void TemporaryEmployee::setSalaryCoefficient(float salary){
+	TemporaryEmployee::salaryCoefficient=salary;
+}
+/*	void TemporaryEmployee::setName(string name){
 		TemporaryEmployee::name=name;
 	}
 	void TemporaryEmployee::setType(bool type){
@@ -41,7 +46,7 @@ void TemporaryEmployee::setTitle(string title){
 	void TemporaryEmployee::setDateOfBirth(Date date){
 		TemporaryEmployee::dateOfBirth=date;
 	}
-
+*/
 
 	float TemporaryEmployee::getSalaryCoefficient(){
 		return TemporaryEmployee::salaryCoefficient;
@@ -71,50 +76,7 @@ void TemporaryEmployee::setTitle(string title){
 		return TemporaryEmployee::number;
 	}
 
-
-	string getTitle();
-	float getSalaryCoefficient();
-	int getNumber() ;
-	bool  getType() ;
-	string getName() ;
-	string getSurname();
-	Date getDateOfBirth() ;
-	Date getDateOfAppointment() ;
-	int getLengthOfService();
-
-	void setTitle(string title);
-	void setSalaryCoefficient(float salary);
-	void setDateOfAppointment(Date date);
-	void setLengthOfService(int length);
-	void setDateOfBirth(Date date);
-	void setType(bool type);
-	void setName( string name);
-	void setSurname(string surname);
-	void setNumber( int number);
-
-
-/*ostream& operator<<(ostream& out,Employee emp){
-	out <<"type: "<< emp.getType() <<endl;
-	out <<"name: "<< emp.getName() <<endl;
-	out <<"surname: "<< emp.getSurname() <<endl;
-	out <<"title: "<<emp.getTitle()<<endl;
-	out <<"salary coefficient: "<<emp.getSalaryCoefficient()<<endl;
-
-	out <<"birth date: "<<emp.getDateOfBirth().getDay()<<"-"<<emp.getDateOfBirth().getMounth()<<"-"
-			<<emp.getDateOfBirth().getYear()<<endl;
-	Date d2=emp.getDateOfAppointment();
-	out <<"appointment day: "<<emp.getDateOfAppointment().getDay()<<"-"<<emp.getDateOfAppointment().getMounth()
-					<<"-"<<emp.getDateOfAppointment().getYear()<<endl;
-	out <<"length of services: "<<emp.getLengthOfService()<<endl;
-	return out;
-}*/
 TemporaryEmployee::~TemporaryEmployee() {
 	// TODO Auto-generated destructor stub
 }
-
-
-
-
-
-
 

@@ -1,23 +1,36 @@
 /*
  * DoubleDynamicLinkedList.h
  *
- *  Created on: 25 Kas 2021
+ *  Created on: 26 Kas 2021
  *      Author: elif_
  */
-
+#include "PermanentEmployee.h"
+#include <iostream>
 #ifndef DOUBLEDYNAMICLINKEDLIST_H_
 #define DOUBLEDYNAMICLINKEDLIST_H_
 
+struct Node{
+	PermanentEmployee data;
+	Node * next;
+	Node *prev;
+};
+
 class DoubleDynamicLinkedList {
 public:
-	struct node*head=NULL;
+
 	DoubleDynamicLinkedList();
+    struct Node* head=NULL;
+
+	struct Node* getNode(PermanentEmployee data);
+
+	void sortedInsert(struct Node** head_ref, struct Node* newNode);
+
+	struct Node* findByNumber(Node *head,int number);
+
+	bool isThere(Node* head,int number);
+    void deleteNode(Node **head_ref,struct Node* del);
 
 
-	bool searchByNum(struct node* head,int num);
-	struct node *getNode(PermanentEmployee *data);
-	void sortedInsert(struct node** head_ref, struct node* newNode);
-    bool search(struct node* head, int x);
 	virtual ~DoubleDynamicLinkedList();
 };
 
